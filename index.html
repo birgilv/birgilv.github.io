@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Your Name — Portfolio</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="#" class="logo">Your<span>Name</span></a>
+
+      <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+        ☰
+      </button>
+
+      <nav class="site-nav" id="site-nav">
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#experience">Experience</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO -->
+    <section class="hero">
+      <div class="container">
+        <h1>Hi, I’m <span class="accent">Your Name</span>.</h1>
+        <p class="subtitle">
+          TypeScript & Front-End developer building clean, fast web apps.
+        </p>
+        <div class="cta">
+          <a class="btn" href="#projects">View Projects</a>
+          <a class="btn btn-outline" href="mailto:you@example.com">Email Me</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about" class="section">
+      <div class="container">
+        <h2>About</h2>
+        <p>
+          I’m a data engineering student at NTNU Ålesund focused on modern
+          front-end development with TypeScript, React, and clean UI. I enjoy
+          turning ideas into polished, accessible products.
+        </p>
+        <ul class="chips">
+          <li>TypeScript</li><li>React</li><li>Vue</li><li>JavaScript</li>
+          <li>HTML</li><li>CSS</li><li>Docker</li><li>CI/CD</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section id="projects" class="section alt">
+      <div class="container">
+        <h2>Projects</h2>
+
+        <div class="projects" id="projects-list">
+          <!-- Cards will be injected by script.js from the PROJECTS array -->
+        </div>
+      </div>
+    </section>
+
+    <!-- EXPERIENCE -->
+    <section id="experience" class="section">
+      <div class="container">
+        <h2>Experience</h2>
+
+        <article class="item">
+          <div class="item-head">
+            <h3>Front-End Intern — Solwr</h3>
+            <span class="muted">Aug 2024 – Dec 2024 · Ålesund, NO</span>
+          </div>
+          <ul>
+            <li>Built a scalable dashboard in a student team (React + TypeScript).</li>
+            <li>Expanded the internal trace module; improved UX and performance.</li>
+            <li>Worked in Scrum with CI/CD on AKS (Azure Kubernetes Service).</li>
+          </ul>
+        </article>
+
+        <article class="item">
+          <div class="item-head">
+            <h3>Student Developer — NTNU Projects</h3>
+            <span class="muted">2023 – Present</span>
+          </div>
+          <ul>
+            <li>Containerized a Rails app with GitHub Actions and multi-service Compose.</li>
+            <li>Built a chess tournament visualizer with real-time camera input.</li>
+            <li>Led teams as Scrum Master across several course projects.</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="section alt">
+      <div class="container">
+        <h2>Contact</h2>
+        <p>Want to collaborate or just say hi? Reach me here:</p>
+        <ul class="contact">
+          <li><a href="mailto:you@example.com">you@example.com</a></li>
+          <li><a href="https://github.com/yourname" target="_blank" rel="noreferrer">GitHub</a></li>
+          <li><a href="https://www.linkedin.com/in/yourname/" target="_blank" rel="noreferrer">LinkedIn</a></li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <span>© <span id="year"></span> Your Name</span>
+    </div>
+  </footer>
+
+  <script src="script.js" defer></script>
+</body>
+</html>
