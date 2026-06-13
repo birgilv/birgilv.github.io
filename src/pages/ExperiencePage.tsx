@@ -1,21 +1,23 @@
 import { useState } from 'react';
-import { experience } from '../data/experience.ts';
+import { experience } from '../data/experience';
 import ExperienceDetail from '../components/ExperienceDetail';
 import ExperienceList from '../components/ExperienceList';
 
 function ExperiencePage() {
-  const [selectedIndex, setSelectedIndex] = useState(0);
+  const [selectedGroup, setSelectedGroup] = useState(experience[0].companyName);
+
+  const roles = experience.filter((e) => e.companyName === selectedGroup);
 
   return (
     <div style={{ display: 'flex', gap: '2rem' }}>
       <div style={{ flex: 2 }}>
-        <ExperienceDetail experience={experience[selectedIndex]} />
+        <ExperienceDetail roles={roles} />
       </div>
       <div style={{ flex: 1 }}>
         <ExperienceList
           items={experience}
-          selectedIndex={selectedIndex}
-          onSelect={setSelectedIndex}
+          selectedCompany={selectedGroup}
+          onSelect={setSelectedGroup}
         />
       </div>
     </div>

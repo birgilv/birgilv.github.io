@@ -23,3 +23,21 @@ export function getDateRangeLabel(startDate: Date, endDate?: Date): string {
   const endStr = endDate ? formatDate(endDate) : 'Present';
   return `${startStr} - ${endStr} · ${getDuration(startDate, endDate)}`;
 }
+
+export function getTotalDuration(periods: { startDate: Date; endDate?: Date }[]): string {
+  let totalMonths = 0;
+  for (const { startDate, endDate } of periods) {
+    const end = endDate ?? new Date();
+    let months = (end.getFullYear() - startDate.getFullYear()) * 12 + (end.getMonth() - startDate.getMonth());
+    if (months < 0) months = 0;
+    totalMonths += months;
+  }
+
+  const years = Math.floor(totalMonths / 12);
+  const months = totalMonths % 12;
+
+  const yearStr = years > 0 ? `${years} yr${years > 1 ? 's' : ''}` : '';
+  const monthStr = months > 0 ? `${months} mo${months > 1 ? 's' : ''}` : '';
+
+  return [yearStr, monthStr].filter(Boolean).join(' ') || '< 1 mo';
+}
