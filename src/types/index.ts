@@ -1,4 +1,5 @@
 export interface Profile {
+  technologies: any;
   firstName: string;
   lastName: string;
   educationTitle: string; // e.g. "Mc. Computer Science"

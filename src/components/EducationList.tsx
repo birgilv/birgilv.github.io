@@ -1,13 +1,12 @@
-import type { Experience } from '../types';
-import { getDateRangeLabel } from '../utils/dateUtils';
+import type { Education } from '../types';
 
 interface Props {
-  items: Experience[];
+  items: Education[];
   selectedIndex: number;
   onSelect: (index: number) => void;
 }
 
-function ExperienceList({ items, selectedIndex, onSelect }: Props) {
+function EducationList({ items, selectedIndex, onSelect }: Props) {
   return (
     <ul style={{ listStyle: 'none', padding: 0 }}>
       {items.map((item, i) => (
@@ -20,13 +19,13 @@ function ExperienceList({ items, selectedIndex, onSelect }: Props) {
             background: i === selectedIndex ? '#eee' : 'transparent',
           }}
         >
-          <strong>{item.title}</strong>
-          <div>{item.companyName}</div>
-          <small>{getDateRangeLabel(item.startDate, item.endDate)}</small>
+          <strong>{item.degreeTitle}</strong>
+          <div>{item.schoolName}</div>
+          <small>{String(item.startDate)} - {String(item.endDate) ?? 'Present'}</small>
         </li>
       ))}
     </ul>
   );
 }
 
-export default ExperienceList;
+export default EducationList;
