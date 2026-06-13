@@ -16,10 +16,6 @@ function HomePage() {
           <a href={profile.linkedin}>LinkedIn</a> · <a href={profile.github}>GitHub</a>
         </p>
       </section>
-
-      <section>
-        <h3>Technologies</h3>
-      </section>
     </div>
   );
 }
